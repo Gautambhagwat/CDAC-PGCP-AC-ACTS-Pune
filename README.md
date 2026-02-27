@@ -33,16 +33,15 @@ It includes:
 ```
 CDAC-PGCP-AC
 │
-├── C-Programming
-├── CPP
+├── C-Programming OOP
 ├── Java
 ├── Data-Structures
-├── Operating-Systems
+├── Operating-Systems and Networking
 ├── DBT
 ├── WPT
-├── Linux
-├── Assignments
-└── Notes
+├── DotNet(C#)
+├── Apptitiude and Communication
+└── Project Work
 ```
 
 ---
