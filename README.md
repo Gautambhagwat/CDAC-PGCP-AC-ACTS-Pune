@@ -33,29 +33,30 @@ It includes:
 ```
 CDAC-PGCP-AC
 │
-├── C-Programming OOP
+├── C++ Programming OOP
 ├── Java
 ├── Data-Structures
 ├── Operating-Systems and Networking
 ├── DBT
 ├── WPT
-├── DotNet(C#)
-├── Apptitiude and Communication
-└── Project Work
+├── .NET (C#)
+├── Attitude and Communication
+├── Assignments 
+└── Projects
 ```
 
 ---
 
 ## 🛠 Technologies Covered
 
-- C  
 - C++  
-- Java  
+- Java
+- .NET 
 - SQL / MySQL  
 - Linux  
 - Shell Scripting  
 - HTML, CSS, JavaScript  
-- Git  
+- Git, Github  
 
 ---
 
