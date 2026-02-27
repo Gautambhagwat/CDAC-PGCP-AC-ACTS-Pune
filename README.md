@@ -1,98 +1,104 @@
-CDAC PGCP-AC – ACTS, Pune
+<h1 align="center">🎓 CDAC PGCP-AC – ACTS, Pune</h1>
+<p align="center">
+  <b>Post Graduate Certificate in Advanced Computing</b><br>
+  Codes • Assignments • Notes • Practice Programs
+</p>
 
-This repository contains my codes, assignments, lab work, and notes from the PGCP-AC (Post Graduate Certificate in Advanced Computing) program at CDAC ACTS, Pune.
+<p align="center">
+  <img src="https://img.shields.io/badge/C-Programming-blue?style=for-the-badge&logo=c">
+  <img src="https://img.shields.io/badge/C++-OOP-blue?style=for-the-badge&logo=c%2B%2B">
+  <img src="https://img.shields.io/badge/Java-Development-red?style=for-the-badge&logo=java">
+  <img src="https://img.shields.io/badge/SQL-Database-orange?style=for-the-badge&logo=mysql">
+  <img src="https://img.shields.io/badge/Linux-System-yellow?style=for-the-badge&logo=linux">
+  <img src="https://img.shields.io/badge/Git-VersionControl-black?style=for-the-badge&logo=git">
+</p>
 
-It serves as a structured collection of my learning, hands-on practice, and academic work completed during the course.
+---
 
-📘 About the Course
+## 📘 About
 
-The PGCP-AC program at CDAC ACTS focuses on building strong foundations in:
+This repository contains my academic work and hands-on practice completed during the **PGCP-AC program at CDAC ACTS, Pune**.
 
-Data Structures & Algorithms
+It includes:
+- 💻 Lab Assignments  
+- 📝 Practice Codes  
+- 📚 Institute Notes  
+- 🔍 Concept Implementations  
+- 🚀 Revision Material  
 
-Object-Oriented Programming
+---
 
-Operating Systems
+## 📂 Repository Structure
 
-Database Technologies
+```
+CDAC-PGCP-AC
+│
+├── C-Programming
+├── CPP
+├── Java
+├── Data-Structures
+├── Operating-Systems
+├── DBT
+├── WPT
+├── Linux
+├── Assignments
+└── Notes
+```
 
-Web Technologies
+---
 
-Software Development Practices
+## 🛠 Technologies Covered
 
-System Programming
+- C  
+- C++  
+- Java  
+- SQL / MySQL  
+- Linux  
+- Shell Scripting  
+- HTML, CSS, JavaScript  
+- Git  
 
-Networking Basics
+---
 
-This repository reflects my practical implementation and understanding of these subjects.
+## 🚀 How to Run Programs
 
-📂 Repository Structure
+### ▶ C
+```bash
+gcc filename.c -o output
+./output
+```
 
-The repository is organized subject-wise for clarity.
+### ▶ C++
+```bash
+g++ filename.cpp -o output
+./output
+```
 
-Example structure:
+### ▶ Java
+```bash
+javac Filename.java
+java Filename
+```
 
-/C-Programming
-/C++
-//Java
-/Data-Structures
-/Operating-Systems
-/DBT
-/WPT
-/Notes
-/Assignments
+---
 
-Each folder contains:
+## 🎯 Purpose
 
-Practice programs
+✔ Strengthen programming fundamentals  
+✔ Maintain structured academic records  
+✔ Quick revision before interviews  
+✔ Track technical growth  
 
-Lab assignments
+---
 
-Institute-provided exercises
+## 👨‍💻 Author
 
-Important notes for revision
+**Gautam Vinayak Bhagwat**  
+PGCP-AC Student  
+CDAC ACTS, Pune  
 
-🛠 Technologies Used
+---
 
-C
-
-C++
-
-Java
-
-SQL
-
-Linux
-
-Git
-
-Shell Scripting
-
-Basic Web Technologies (HTML, CSS, JavaScript)
-
-🎯 Purpose of This Repository
-
-Track my learning progress
-
-Maintain structured academic records
-
-Quick revision before interviews
-
-Strengthen core concepts
-
-Showcase practical implementation skills
-
-🚀 How to Use
-
-Navigate to the required subject folder.
-
-Open program files to review implementation.
-
-Refer to notes for theoretical understanding.
-
-Compile and execute programs locally for practice.
-
-👨‍💻 Author
-
-Gautam Vinayak Bhagwat
-PGCP-AC Student – CDAC ACTS, Pune
+<p align="center">
+⭐ If you find this repository helpful, consider giving it a star!
+</p>
