@@ -1,0 +1,65 @@
+On windows
+1. Turn on of features > Windows Subsystem for Linux
+2. goto Microsoft store> search ubantu 20.x > install it
+3. start button type > WSL> click on WSL system> it will open prompt
+
+Linux System
+4. create a folder by name cppdemos
+    $mkdir cppdemos
+5. change the folder
+     $ cd cppdemos
+6. to check your present working folder
+     $pwd
+7. to create hello.cpp
+     $vi hello.cpp
+      or
+     $ gedit hello.cpp
+
+8. and type following code
+   
+ #include<iostream>
+ using namespace std;
+ int main(){
+    cout<<"Hello world!!";
+    return 0;
+ }
+9. save and exit the editor
+10. to compile the code
+   $ g++ hello.cpp 
+11. To run the code
+    $./a.out
+12. to create output file with your name
+    $g++ hello.cpp -o hello.out
+    $./hello.out
+
+
+in vi editor 
+To save the file and quit
+ESC :wq    w for write and q for quit
+
+to save and continue
+Esc :w
+
+To quit without saving
+Esc :q!
+
+To change to insert mode for typing
+ESC i
+
+To delete the entire line
+Esc dd
+
+To shift the cursor to end of the line
+Esc shift $ a ---a for append
+
+To delete current character
+Esc x
+
+to copy lines
+Esc n yy    p
+
+to see line numbers
+Esc :set nu
+
+
+
