@@ -1,0 +1,181 @@
+Introduction to C++ Streams and I/O
+1. C++ Streams
+
+A stream in C++ is a flow of data between a program and an input/output device.
+
+It allows programs to read data from input devices and write data to output devices.
+
+Types of Streams
+
+Input Stream
+
+Data flows from input device to program
+
+Example: Keyboard input
+
+Output Stream
+
+Data flows from program to output device
+
+Example: Monitor output
+
+Standard Streams
+Stream	Description	Device
+cin	Standard input stream	Keyboard
+cout	Standard output stream	Monitor
+cerr	Standard error stream	Monitor
+clog	Buffered error stream	Monitor
+Example
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    cout << "You entered: " << num << endl;
+
+    return 0;
+}
+2. C++ Stream Classes
+
+C++ I/O is implemented using class hierarchy in the <iostream> library.
+
+Important Stream Classes
+Class	Description
+ios	Base class for all stream classes
+istream	Input stream class
+ostream	Output stream class
+iostream	Handles both input and output
+ifstream	Input file stream
+ofstream	Output file stream
+fstream	File stream for both input and output
+Stream Class Hierarchy (Simplified)
+        ios
+       /   \
+   istream  ostream
+       \     /
+        iostream
+3. Unformatted I/O Operations
+
+These operations read or write data without formatting.
+
+Common Unformatted Input Functions
+Function	Purpose
+get()	Reads a single character
+getline()	Reads a line of text
+read()	Reads block of data
+Example
+#include <iostream>
+using namespace std;
+
+int main() {
+    char ch;
+
+    cout << "Enter a character: ";
+    //get is used to accept a single character
+    cin.get(ch);
+
+    cout << "Character entered: " << ch;
+
+    return 0;
+}
+
+
+Example of getline()
+#include <iostream>
+using namespace std;
+
+int main() {
+    char name[50];
+
+    cout << "Enter name: ";
+    //accepts string with spaces, it ends when user press enter 
+    cin.getline(name,50);
+
+    cout << "Name: " << name;
+
+    return 0;
+}
+
+
+4. Formatted I/O Operations
+
+Formatted I/O allows data to be displayed in a specific format.
+
+The operators used are:
+
+Operator	Purpose
+<<	Insertion operator (output)
+>>	Extraction operator (input)
+Example
+#include <iostream>
+using namespace std;
+
+int main() {
+    int id = 101;
+    float salary = 25000.5;
+
+    cout << "ID: " << id << endl;
+    cout << "Salary: " << salary << endl;
+
+    return 0;
+}
+
+These operators automatically convert data types into readable format.
+
+5. Managing Output with Manipulators
+
+Manipulators are special functions used to format the output.
+
+They are available in <iomanip> header file.
+
+Common Manipulators
+Manipulator	Purpose
+endl	Insert newline
+setw()	Set field width
+setprecision()	Set decimal precision
+setfill()	Fill empty spaces
+fixed	Display floating numbers in fixed format
+
+
+Example
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+
+    cout << setw(10) << "ID" << setw(10) << "Marks" << endl;
+    cout << setw(10) << 101 << setw(10) << 85 << endl;
+
+    return 0;
+}
+
+Output
+
+        ID     Marks
+       101        85
+
+
+Example with setprecision
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+
+    float pi = 3.1415926;
+
+    cout << setprecision(3) << pi << endl;
+    cout << fixed << setprecision(2) << pi << endl;
+
+    return 0;
+}
+
+Output
+
+3.14
+3.14

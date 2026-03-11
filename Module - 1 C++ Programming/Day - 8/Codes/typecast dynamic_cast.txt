@@ -1,0 +1,249 @@
+In C++, there are four main type-casting operators used instead of 
+old C-style casting. 
+
+int i=10
+float f=i;
+double f=34.5
+float f1=(float)f;
+
+They make casting safer and more explicit.
+
+1. static_cast
+
+2. dynamic_cast
+
+3. const_cast
+
+4. reinterpret_cast
+
+
+
+1. static_cast
+
+Used for compile-time type conversions.
+It performs conversions that are logically valid and checked at compile time.
+
+Uses------
+
+Converting numeric types
+
+Converting base class pointer to derived class pointer (unsafe if wrong)
+
+Removing implicit conversions
+
+Void pointer conversions
+
+Numeric Conversion
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    double d = 10.75;
+    int x;
+    
+    x = static_cast<int>(d);
+
+    cout << "Double: " << d << endl;
+    cout << "Int: " << x << endl;
+}
+
+Output
+
+Double: 10.75
+Int: 10
+
+
+Example 2: Base → Derived (Dangerous)
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    void show() { cout << "Base class\n"; }
+};
+
+class Derived : public Base {
+public:
+    void display() { cout << "Derived class\n"; }
+};
+
+int main() {
+    Base *b = new Derived();
+    Derived *d = static_cast<Derived*>(b);
+    d->display();
+}
+
+If b was not actually pointing to a Derived, program behavior becomes undefined.
+
+Use when conversion is known and safe at compile time.
+
+
+
+
+2. dynamic_cast
+Used for safe runtime casting in inheritance.
+
+It checks the actual object type at runtime.
+
+Works only with:
+
+Polymorphism (virtual function required)
+
+Base ----> Derived conversions
+
+
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    virtual void show() {}
+};
+
+class Derived : public Base {
+public:
+    void display() {
+        cout << "Derived class function\n";
+    }
+};
+
+int main() {
+    Base *b = new Derived();
+
+    Derived *d = dynamic_cast<Derived*>(b);
+
+    if(d != NULL)
+        d->display();
+    else
+        cout << "Cast failed\n";
+}
+
+Output
+
+Derived class function
+
+
+
+Failed Cast Example
+Base *b = new Base();
+
+Derived *d = dynamic_cast<Derived*>(b);
+
+if(d == NULL)
+    cout << "Cast failed";
+
+Output
+
+Cast failed
+
+
+Pointer vs Reference
+
+Pointer
+
+Returns NULL if cast fails
+
+Reference
+
+Throws bad_cast exception
+
+
+try {
+    Derived &d = dynamic_cast<Derived&>(*b);
+}
+catch(bad_cast) {
+    cout<<"Conversion failed";
+}
+
+
+When performing downcasting safely in polymorphic hierarchy.
+
+3. const_cast
+
+Used to add or remove const or volatile qualifier.
+
+It does NOT change the actual object, only the pointer/reference type.
+
+
+#include <iostream>
+using namespace std;
+
+void modify(int *p) {
+    *p = 50;
+}
+
+int main() {
+    const int x = 10;
+    modify(const_cast<int*>(&x));
+
+    cout << x;
+}
+
+
+This is dangerous if the object was originally declared const.
+
+Safer Example
+
+void printData(const int* p) {
+    int* modifiable = const_cast<int*>(p);
+    *modifiable = 20;
+}
+
+
+Mostly used when calling old APIs that don't use const correctly.
+
+
+
+
+reinterpret_cast
+
+Used for low-level type conversion.
+
+It reinterprets the memory representation of data.
+
+This is very unsafe and rarely used.
+
+Pointer Conversion
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x = 65;
+
+    int *p = &x;
+
+    char *ch = reinterpret_cast<char*>(p);
+
+    cout << *ch;
+}
+
+Output (ASCII)
+
+A
+
+Example 2: Integer ---> Pointer
+int num = 1000;
+
+int *ptr = reinterpret_cast<int*>(num);
+
+This treats 1000 as memory address.
+
+Example 3: Different Pointer Types
+class A {};
+class B {};
+
+A obj;
+
+B *b = reinterpret_cast<B*>(&obj);
+
+No safety checks.
+
+Comparison Table
+Cast	      Checked At	Use Case	Safe
+static_cast	Compile time	Normal conversions	Medium
+dynamic_cast	Runtime	Safe    inheritance casting	Safe
+const_cast	Compile time	Add/remove const	Risky
+reinterpret_cast	No checking	Low level memory manipulation	Dangerous
